@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Random;
 
@@ -26,8 +27,14 @@ public class MainActivity extends AppCompatActivity {
         btnRandom.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int min = Integer.parseInt(edtMin.getText().toString());
-                int max = Integer.parseInt(edtMax.getText().toString());
+                String chuoi1 = edtMin.getText().toString(),
+                chuoi2 = edtMax.getText().toString();
+                if(chuoi1 == null || chuoi2 == null || chuoi1.length() == 0 || chuoi2.length() == 0){
+                    Toast.makeText(MainActivity.this, "Không được bỏ trống", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                int min = Integer.parseInt(chuoi1);
+                int max = Integer.parseInt(chuoi2);
                 if(min > max){
                     int temp = min;
                     min = max;
