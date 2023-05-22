@@ -4,27 +4,62 @@
     android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical">
-    <TextView
+
+    <LinearLayout
         android:layout_weight="1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Android"
-        android:textSize="30sp"
-        android:textColor="#FFE500"
-        android:background="#0080FF">
-    </TextView>
+        android:layout_height="match_parent">
+        <TextView
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Android"
+            android:textSize="30sp"
+            android:textColor="#FFE500"
+            android:background="#0080FF">
+        </TextView>
+        <TextView
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Java"
+            android:textSize="30sp"
+            android:textColor="#2196F3"
+            android:background="#FFEB3B">
+        </TextView>
+    </LinearLayout>
 
-    <TextView
-        android:layout_weight="1"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="PHP"
-        android:textSize="30sp"
-        android:textColor="#FFE500"
-        android:background="#00FF0A">
-    </TextView>
+        android:layout_weight="1"
+        android:weightSum="10">
+        <TextView
+            android:gravity="center"
+            android:layout_weight="7"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="HTML"
+            android:textSize="30sp"
+            android:textColor="#00FF0A"
+            android:background="#FFEB3B">
+        </TextView>
+        <TextView
+            android:gravity="center"
+            android:layout_weight="3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="PHP"
+            android:textSize="30sp"
+            android:textColor="#FFE500"
+            android:background="#00FF0A">
+        </TextView>
+    </LinearLayout>
 
     <TextView
+        android:gravity="center"
         android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -35,6 +70,7 @@
     </TextView>
 
     <TextView
+        android:gravity="center"
         android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
