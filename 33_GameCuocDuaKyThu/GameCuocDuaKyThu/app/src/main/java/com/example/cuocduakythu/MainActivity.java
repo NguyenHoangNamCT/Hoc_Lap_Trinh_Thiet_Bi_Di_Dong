@@ -9,6 +9,7 @@ import android.widget.CheckBox;
 import android.widget.ImageButton;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Random;
 
@@ -36,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         imageButtonPlay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //trước khi chạy reset về 0 hết
                 seekBar1.setProgress(0);
                 seekBar2.setProgress(0);
                 seekBar3.setProgress(0);
@@ -48,6 +50,28 @@ public class MainActivity extends AppCompatActivity {
                         int r3 = r.nextInt(max - min + 1) + min;
                         int r4 = r.nextInt(max - min + 1) + min;
 
+                        //trước khi tiến tới kiểm tra xem đã về địch chưa để thông báo và dừng lại, và hiện nút play để chơi tiếp
+                        if(seekBar1.getProgress() >= seekBar1.getMax()){
+                            Toast.makeText(MainActivity.this, "Siêu nhân đỏ win", Toast.LENGTH_SHORT).show();
+                            imageButtonPlay.setVisibility(View.VISIBLE);
+                            this.cancel();
+                        }
+                        if(seekBar2.getProgress() >= seekBar2.getMax()){
+                            Toast.makeText(MainActivity.this, "Tàu win", Toast.LENGTH_SHORT).show();
+                            imageButtonPlay.setVisibility(View.VISIBLE);
+                            this.cancel();
+                        }
+                        if(seekBar3.getProgress() >= seekBar3.getMax()){
+                            Toast.makeText(MainActivity.this, "Rùa win", Toast.LENGTH_SHORT).show();
+                            imageButtonPlay.setVisibility(View.VISIBLE);
+                            this.cancel();
+                        }
+                        if(seekBar4.getProgress() >= seekBar4.getMax()){
+                            Toast.makeText(MainActivity.this, "Thỏ win", Toast.LENGTH_SHORT).show();
+                            imageButtonPlay.setVisibility(View.VISIBLE);
+                            this.cancel();
+                        }
+
                         seekBar1.setProgress(seekBar1.getProgress() + r1);
                         seekBar2.setProgress(seekBar2.getProgress() + r2);
                         seekBar3.setProgress(seekBar3.getProgress() + r3);
@@ -56,7 +80,8 @@ public class MainActivity extends AppCompatActivity {
 
                     @Override
                     public void onFinish() {
-                        imageButtonPlay.setVisibility(View.VISIBLE);
+                        //lặp vô hạn đến khi thắng thì thoi
+                        this.start();
                     }
                 };
                 //trước khi chạy thì ẩn nút play
