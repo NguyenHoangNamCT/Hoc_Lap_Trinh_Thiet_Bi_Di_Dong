@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.List;
+import java.util.Vector;
 
 public class TraiCayAdapter extends BaseAdapter {
     private Context context;
@@ -60,19 +61,36 @@ public class TraiCayAdapter extends BaseAdapter {
         return 0;
     }
 
+    class ViewHolder{
+        ImageView img;
+        TextView tvMoTa, tvTen;
+    }
+
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        convertView = layoutInflater.inflate(layout, null);
+        ViewHolder viewHolder;
+        if(convertView == null){
+            LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            convertView = layoutInflater.inflate(layout, null);
 
-        //ánh xạ
-        TextView ten = convertView.findViewById(R.id.textViewTen),
-                mota = convertView.findViewById(R.id.textViewMoTa);
-        ImageView hinhTraiCay= convertView.findViewById(R.id.imageViewTraiCay);
+            viewHolder = new ViewHolder();
+            //ánh xạ
+            viewHolder.tvTen = convertView.findViewById(R.id.textViewTen);
+            viewHolder.tvMoTa = convertView.findViewById(R.id.textViewMoTa);
+            viewHolder.img= convertView.findViewById(R.id.imageViewTraiCay);
 
-        ten.setText(fruitList.get(position).getTen());
-        mota.setText(fruitList.get(position).getMoTa());
-        hinhTraiCay.setImageResource(fruitList.get(position).getHinhAnh());
+            //setTag (lưu đối tượng viewHolder lại)
+            convertView.setTag(viewHolder);
+        }
+        else{
+            //lấy đối tượng đã lưu ra
+            viewHolder = (ViewHolder) convertView.getTag();
+        }
+
+
+        viewHolder.tvTen.setText(fruitList.get(position).getTen());
+        viewHolder.tvMoTa.setText(fruitList.get(position).getMoTa());
+        viewHolder.img.setImageResource(fruitList.get(position).getHinhAnh());
         return convertView;
     }
 }
