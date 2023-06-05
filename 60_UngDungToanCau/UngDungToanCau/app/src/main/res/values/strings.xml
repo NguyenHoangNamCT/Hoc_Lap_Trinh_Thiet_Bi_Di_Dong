@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">UngDungToanCau</string>
-    <string name="text_tieuDe">PHIẾU THÔNG TIN</string>
-    <string name="hint_hoTen">Nhập họ tên</string>
-    <string name="hint_email">Nhập email</string>
-    <string name="hint_sdt">Nhập số điện thoại</string>
-    <string name="text_xacNhan">Xác nhận</string>
+    <string name="text_tieuDe">infomation form</string>
+    <string name="hint_hoTen">input your name</string>
+    <string name="hint_email">input your email</string>
+    <string name="hint_sdt">input your phone number</string>
+    <string name="text_xacNhan">confirm</string>
 </resources>
