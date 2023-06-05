@@ -5,4 +5,7 @@
     <string name="hint_email">input your email</string>
     <string name="hint_sdt">input your phone number</string>
     <string name="text_xacNhan">confirm</string>
+    <string name="text_email">Email:</string>
+    <string name="text_sdt">Phone number</string>
+    <string name="text_chao">"Hi: "</string>
 </resources>

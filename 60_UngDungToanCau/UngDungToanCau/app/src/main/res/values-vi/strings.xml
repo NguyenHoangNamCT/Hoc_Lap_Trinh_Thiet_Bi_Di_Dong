@@ -6,4 +6,7 @@
     <string name="hint_email">Nhập email</string>
     <string name="hint_sdt">Nhập số điện thoại</string>
     <string name="text_xacNhan">Xác nhận</string>
+    <string name="text_email">"Email: "</string>
+    <string name="text_sdt">"SDT: "</string>
+    <string name="text_chao">"Chào bạn: "</string>
 </resources>

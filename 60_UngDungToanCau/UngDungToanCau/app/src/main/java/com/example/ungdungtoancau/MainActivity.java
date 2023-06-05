@@ -29,8 +29,12 @@ public class MainActivity extends AppCompatActivity {
                 email = editTextEmail.getText().toString(),
                 sdt = editTextSDT.getText().toString();
 
+                String textChao = getResources().getString(R.string.text_chao),
+                        textEmail = getResources().getString(R.string.text_email),
+                        textSDT = getResources().getString(R.string.text_sdt);
+
 //                Toast.makeText(MainActivity.this, "Chào bạn: " + hoTen + "\nEmail: " + email + "\nSố điện thoại: " + sdt, Toast.LENGTH_SHORT).show();
-                txtThongTin.setText("Chào bạn: " + hoTen + "\nEmail: " + email + "\nSố điện thoại: " + sdt);
+                txtThongTin.setText(textChao + hoTen + "\n"+ textEmail + email + "\n" + textSDT + sdt);
             }
         });
     }
