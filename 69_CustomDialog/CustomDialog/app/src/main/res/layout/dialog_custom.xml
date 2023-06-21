@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="#FFE500">
+    <TextView
+        android:layout_gravity="center"
+        android:textColor="#ff00"
+        android:textStyle="bold"
+        android:textSize="30sp"
+        android:text="Đăng nhập hệ thống"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    </TextView>
+
+    <EditText
+        android:id="@+id/edtTDN"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Tên đăng nhập (admin)">
+    </EditText>
+
+    <EditText
+        android:id="@+id/edtPW"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Mật khẩu(123)"
+        android:inputType="textPassword">
+    </EditText>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="10"
+        android:layout_marginTop="10dp"
+        android:padding="10dp">
+        <Button
+            android:id="@+id/buttonDangNhap"
+            android:text="Đăng nhập"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="5">
+        </Button>
+
+        <Button
+            android:id="@+id/buttonHuy"
+            android:text="Huỷ"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="5">
+        </Button>
+    </LinearLayout>
+
+</LinearLayout>
